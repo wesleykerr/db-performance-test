@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem "json"
+gem "sinatra"
+gem "sinatra-contrib"
+gem 'data_mapper'
+gem 'dm-mysql-adapter'
+gem 'narray'
+gem 'redis'
+gem 'memcached'

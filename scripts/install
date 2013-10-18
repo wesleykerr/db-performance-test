@@ -1,0 +1,47 @@
+#!/bin/bash
+
+####
+#### Redis
+####
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+
+sudo cp src/redis-server /usr/local/bin
+sudo cp src/redis-cli /usr/local/bin
+
+sudo apt-get -y install screen
+# start redis-server with screen
+
+####
+#### Java
+####
+sudo apt-get -y install software-properties-common
+sudo apt-get -y install apt-file && apt-file update
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get -y install oracle-java7-installer
+
+####
+#### MySQL
+####
+sudo apt-get -y install mysql-server mysql-client mysql-workbench libmysqld-dev
+
+####
+#### Ruby
+####
+sudo apt-get -y install curl
+
+curl -L https://get.rvm.io | bash -s stable
+source ~/.bash_profile
+rvm install 1.9.3
+
+sudo apt-get -y install vim
+sudo apt-get -y install lynx-cur
+
+####
+#### Memcached
+#### 
+sudo apt-get -y install memcached libmemcache-dev libmemcached-dev
